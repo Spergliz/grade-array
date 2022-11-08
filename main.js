@@ -77,12 +77,13 @@ function addRandomGrade() {
 
 function removeLastGrade() {
   // Remove the last grade.
-  grades
+  grades.pop()
   outputEl.innerHTML = "Remove the last grade";
 }
 
 function countBelow50() {
   // Count how many grades are below 50.  Output the result.
+  
   outputEl.innerHTML = "Count grades below 50";
 }
 
