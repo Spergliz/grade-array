@@ -45,31 +45,39 @@ function mainMenu() {
   drawArray();
 }
 
+function randomint(low, high) {
+  return Math.floor(Math.random() * (high - low) + low);
+}
 // ******************************************************
 // MENU SELECTION FUNCTIONS
 // ******************************************************
 function firstTo40() {
   // Set the grade of the first student to 40.
+  grades[0] = 40;
   outputEl.innerHTML = "First grade to 40";
 }
 
 function lastTo50() {
   // Set the grade of the last student to 50.
+  grades[5] = 50
   outputEl.innerHTML = "Last grade to 50";
 }
 
 function randomTo100() {
   // Set the grade of a random student to 100.
+  grades[randomint(0,6)] = 100
   outputEl.innerHTML = "Random grade to 100";
 }
 
 function addRandomGrade() {
   // Add a random grade between 0 and 100 to the end of the array.
+  grades [randomint(0,6)] = Math.random() *100
   outputEl.innerHTML = "Add random grade";
 }
 
 function removeLastGrade() {
   // Remove the last grade.
+  grades
   outputEl.innerHTML = "Remove the last grade";
 }
 
@@ -92,7 +100,6 @@ function decreaseGradesBy10() {
   // Decrease each grade by 10%.
   outputEl.innerHTML = "Decrease all grades by 10%";
 }
-
 
 // Function to draw current state of grades array
 function drawArray() {
