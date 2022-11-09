@@ -83,7 +83,7 @@ function removeLastGrade() {
 
 function countBelow50() {
   // Count how many grades are below 50.  Output the result.
-  
+    
   outputEl.innerHTML = "Count grades below 50";
 }
 
@@ -106,6 +106,7 @@ function decreaseGradesBy10() {
 function drawArray() {
   let outputStr = "";
   let divHeight;
+  
   for (let i = 0; i < grades.length; i++) {
     divHeight = (grades[i] / maxGrade) * 600; // Scale grades to fit in array visualizer container
     outputStr += `<div style="height:${divHeight}px"></div>`;
