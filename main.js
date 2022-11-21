@@ -3,6 +3,7 @@
 // HTML Variables
 let containerEl = document.getElementById("container");
 let outputEl = document.getElementById("output");
+let outputE2 = document.getElementById("output2");
 let goBtnEl = document.getElementById("go");
 let menuEl = document.getElementById("menu");
 
@@ -59,54 +60,73 @@ function firstTo40() {
 
 function lastTo50() {
   // Set the grade of the last student to 50.
-  grades[5] = 50
+  grades[5] = 50;
   outputEl.innerHTML = "Last grade to 50";
 }
 
 function randomTo100() {
   // Set the grade of a random student to 100.
-  grades[randomint(0,6)] = 100
+  grades[randomint(0, 6)] = 100;
   outputEl.innerHTML = "Random grade to 100";
 }
 
 function addRandomGrade() {
   // Add a random grade between 0 and 100 to the end of the array.
-  grades [randomint(0,6)] = Math.random() *100
+  grades[randomint(0, 6)] = Math.random() * 100;
   outputEl.innerHTML = "Add random grade";
 }
 
 function removeLastGrade() {
   // Remove the last grade.
-  grades.pop()
+  grades.pop();
   outputEl.innerHTML = "Remove the last grade";
 }
 
 function countBelow50() {
   // Count how many grades are below 50.  Output the result.
-    
+  let count = 0;
+  for (let y = 0; y < grades.length; y++) {
+    if (grades[y] < 50) {
+      count++;
+    }
+  }
+  outputE2.innerHTML = count;
   outputEl.innerHTML = "Count grades below 50";
+  console.log(count);
 }
-
 function lowGradesTo50() {
   // Change all grades that are below 50 to be equal to 50.
+  for (let y = 0; y < grades.length; y++) {
+    if (grades[y] < 50) { 
+      grades[y] =50
+    }
+  }
+
   outputEl.innerHTML = "Change low grades to 50";
 }
 
 function increaseGradesBy10() {
   // Increase each grade by 10%.
+  for (let y = 0; y < grades.length; y++) {
+    let A = grades[y]*0.1
+    grades[y] += A
+  }
   outputEl.innerHTML = "Increase all grades by 10%";
 }
 
 function decreaseGradesBy10() {
   // Decrease each grade by 10%.
+  for (let y = 0; y < grades.length; y++) {
+    let A = grades[y]*0.1
+    grades[y] -= A
   outputEl.innerHTML = "Decrease all grades by 10%";
 }
-
+}
 // Function to draw current state of grades array
 function drawArray() {
   let outputStr = "";
   let divHeight;
-  
+
   for (let i = 0; i < grades.length; i++) {
     divHeight = (grades[i] / maxGrade) * 600; // Scale grades to fit in array visualizer container
     outputStr += `<div style="height:${divHeight}px"></div>`;
