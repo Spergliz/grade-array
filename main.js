@@ -72,7 +72,7 @@ function randomTo100() {
 
 function addRandomGrade() {
   // Add a random grade between 0 and 100 to the end of the array.
-  grades[randomint(0, 6)] = Math.random() * 100;
+  grades[randomint(0, 8)] = Math.random() * 100;
   outputEl.innerHTML = "Add random grade";
 }
 
