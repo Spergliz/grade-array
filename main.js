@@ -60,19 +60,22 @@ function firstTo40() {
 
 function lastTo50() {
   // Set the grade of the last student to 50.
-  grades[5] = 50;
+   
+  grades[grades.length-1] = 50;
   outputEl.innerHTML = "Last grade to 50";
 }
 
 function randomTo100() {
   // Set the grade of a random student to 100.
-  grades[randomint(0, 6)] = 100;
+  grades[randomint(0, grades.length)] = 100;
   outputEl.innerHTML = "Random grade to 100";
 }
 
 function addRandomGrade() {
   // Add a random grade between 0 and 100 to the end of the array.
-  grades[randomint(0, 8)] = Math.random() * 100;
+  let y = Math.random() * 100;
+  grades.push(y)
+
   outputEl.innerHTML = "Add random grade";
 }
 
